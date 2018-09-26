@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Zona de Retos [8Noobs]</title>
+  <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+
+<body>
+  <div class="mainContent">
+    <header>
+      <div class="logo"></div>
+      <div class="banner">
+        <h1>Zona de Retos 8Noobs</h1>
+        <nav>
+          <a href="#retos">Retos</a>
+          <a href="#clasificacion">Clasificación</a>
+          <a href="#info">Info</a>
+          <a href="https://t.me/Retos8Noobs" class="g-link">Grupo</a>
+        </nav>
+      </div>
+    </header>
+
+
+    <section id="retos">
+      <h2>Retos</h2>
+
+      <lista-retos :fuente="retosNoResueltos"></lista-retos>
+
+    </section>
+
+
+    <section id="clasificacion">
+      <h2>Clasificación</h2>
+      <div class="container">
+
+        <div class="ganadores">
+          <h3>Reciente</h3>
+          <div
+          class="usuarioGanador"
+          v-for="ganador in ganadores">
+
+            <span>{{ganador.puesto}}º - {{ganador.nombre}}</span>
+
+            <img :src="ganador.foto" width="25" height="25" alt="D:">
+
+          </div>
+        </div>
+
+        <div class="retosResueltos">
+          <h3>Resueltos</h3>
+
+          <lista-retos :fuente="retosResueltos"></lista-retos>
+
+        </div>
+
+        <div class="muroDeLaFama">
+          <h3>Global</h3>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="info" ref="barchart">
+      <h2>Información</h2>
+
+      <p>En este grupo se propondrán varios retos/pruebas (de voluntaria realización) sobre diferentes ámbitos, cada prueba se publicará sólo si al menos tres miembros están interesados en ella, a los 10 días como norma general se publicará la solución de la prueba.</p>
+
+      <p>Entre aquellos miembros que entreguen la prueba por privado al autor de la misma, se realizará una clasificación.</p>
+
+      <p>Entre los temas sobre los que se realizarán las pruebas, están los siguientes:</p>
+
+      <ul>
+        <li>🔒Seguridad informática (CTFs, desarrollo de términos, etc, ...).</li>
+        <li>🌐Redes (Protocolos, Modelo OSI, Estructura de redes lógicas y físicas, etc, ...).</li>
+        <li>💻Programación (incluida programación web).</li>
+      </ul>
+
+
+    </section>
+
+
+    <!-- <pre style="color:tomato">{{$data}}</pre> -->
+
+    <!-- Templates Vue -->
+    <template id="lista-retos-template">
+      <div class="container">
+        <a v-for="reto in fuente"
+        :data-hastag="reto.hastag"
+        :href="reto.enlace"
+        :class="{
+          seguridad:reto.hastag.includes('#1'),
+          redes:reto.hastag.includes('#2'),
+          programacion:reto.hastag.includes('#3')
+        }"
+        class="reto"
+        target="_blank"
+        rel="noopener noreferrer">
+        <h3>{{reto.titulo}}</h3>
+        <p>{{reto.descripcion}}</p>
+      </a></div>
+    </template>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="assets/js/main.vue"></script>
+</body>
+</html>
