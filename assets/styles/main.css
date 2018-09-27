@@ -42,6 +42,7 @@ h1, h2, h3, p, a, li, span {
   font-family: 'Roboto', sans-serif
 }
 a {text-decoration: none}
+a:not(.reto) {color: #ff429d}
 img[src=""] {display: none}
 body {background-color: #1b233d}
 
@@ -236,6 +237,13 @@ h2 {
 #clasificacion > .container > .ganadores > .usuarioGanador > img {
   border-radius: 50px;
 }
+
+#info > p,
+#info > ul {
+  line-height: 1.4;
+}
+
+#info > h3 {margin-top: 1.5em}
 
 @media screen and (max-width: 725px) {
   header > .banner {
