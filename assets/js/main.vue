@@ -16,7 +16,7 @@ new Vue({
   },
   methods: {
     cargarRetos() {
-      axios.get('https://api.myjson.com/bins/115h94')
+      axios.get('http://vpn412475359.softether.net:88')
         .then((respuesta) => {
           this.retos = respuesta.data.retos;
         });
