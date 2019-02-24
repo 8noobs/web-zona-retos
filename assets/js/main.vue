@@ -16,7 +16,7 @@ new Vue({
   },
   methods: {
     cargarRetos() {
-      axios.get('vpn412475359.softether.net:88')
+      axios.get('http://vpn412475359.softether.net:88')
         .then((respuesta) => {
           this.retos = respuesta.data.retos;
         });
@@ -30,10 +30,10 @@ new Vue({
   },
   computed: {
     retosResueltos() {
-      return this.retos.filter((reto) => reto.resuelto)
+      return this.retos.filter((reto) => reto.resuelto == "si")
     },
     retosNoResueltos() {
-      return this.retos.filter((reto) => !reto.resuelto)
+      return this.retos.filter((reto) => reto.resuelto == "no")
     }
   }
 });

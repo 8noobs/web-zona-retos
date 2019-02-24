@@ -87,12 +87,12 @@
     <template id="lista-retos-template">
       <div class="container">
         <a v-for="reto in fuente"
-        :data-hastag="reto.hastag"
+        :data-hashtag="reto.hashtag"
         :href="reto.enlace"
         :class="{
-          seguridad:reto.hastag.includes('#1'),
-          redes:reto.hastag.includes('#2'),
-          programacion:reto.hastag.includes('#3')
+          seguridad:reto.hashtag.includes('#1'),
+          redes:reto.hashtag.includes('#2'),
+          programacion:reto.hashtag.includes('#3')
         }"
         class="reto"
         target="_blank"

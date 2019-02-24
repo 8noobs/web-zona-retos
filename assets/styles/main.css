@@ -179,8 +179,8 @@ h2 {
   padding: 2px 8px;
   border-radius: 50px
 }
-.reto[data-hastag]::before {
-  content: attr(data-hastag);
+.reto[data-hashtag]::before {
+  content: attr(data-hashtag);
   position: absolute;
   top: 0; right: 0;
   padding: 3px;
