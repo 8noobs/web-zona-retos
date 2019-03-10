@@ -16,7 +16,10 @@ new Vue({
   },
   methods: {
     cargarRetos() {
-      axios.get('http://vpn412475359.softether.net:88')
+      axios.get('https://vpn412475359.softether.net/index.php/s/iiqcyQBoG4qtnaH/download', {
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }})
         .then((respuesta) => {
           this.retos = respuesta.data.retos;
         });
