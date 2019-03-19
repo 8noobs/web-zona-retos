@@ -16,27 +16,25 @@ new Vue({
   },
   methods: {
     cargarRetos() {
-      axios.get('https://vpn412475359.softether.net/index.php/s/iiqcyQBoG4qtnaH/download', {
-        headers: {
-          'Access-Control-Allow-Origin': '*'
-        }})
-        .then((respuesta) => {
-          this.retos = respuesta.data.retos;
+      this.$http.jsonp('https://json2jsonp.com/?callback=jsonZonaRetos&url=https://vpn412475359.softether.net/index.php/s/iiqcyQBoG4qtnaH/download',
+      {jsonpCallback: 'jsonZonaRetos'})
+        .then(respuesta => {
+          this.retos = respuesta.body.retos;
         });
     },
     cargarGanadores() {
-      axios.get('https://api.myjson.com/bins/1dhga0')
-        .then((respuesta) => {
-          this.ganadores = respuesta.data.ganadores;
+      this.$http.get('https://api.myjson.com/bins/1dhga0')
+        .then(respuesta => {
+          this.ganadores = respuesta.body.ganadores;
         });
     }
   },
   computed: {
     retosResueltos() {
-      return this.retos.filter((reto) => reto.resuelto == "si")
+      return this.retos.filter((reto) => reto.resuelto == "si");
     },
     retosNoResueltos() {
-      return this.retos.filter((reto) => reto.resuelto == "no")
+      return this.retos.filter((reto) => reto.resuelto == "no");
     }
   }
 });
