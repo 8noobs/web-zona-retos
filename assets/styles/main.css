@@ -2,14 +2,14 @@
 
 /* Variables */
 :root {
-  --purple: #8667f0;
+  --purple: #8667F0;
   --orange: #EA5455;
-    --blue: #4f88f6;
+    --blue: #4F88F6;
 
   /* Gradients */
   --purple-grad: linear-gradient( 135deg, #CE9FFC 10%, var(--purple) 100%);
   --orange-grad: linear-gradient( 135deg, #FEB692 10%, var(--orange) 100%);
-    --blue-grad: linear-gradient( 135deg, #5fe5fc 10%, var(--blue) 100%);
+    --blue-grad: linear-gradient( 135deg, #5FE5FC 10%, var(--blue) 100%);
 }
 
 /* Scrollbars */
@@ -42,9 +42,9 @@ h1, h2, h3, p, a, li, span {
   font-family: 'Roboto', sans-serif
 }
 a {text-decoration: none}
-a:not(.reto) {color: #ff429d}
+a:not(.reto) {color: #FF94C8}
 img[src=""] {display: none}
-body {background-color: #1b233d}
+body {background-color: #1B233D}
 
 
 
@@ -138,7 +138,7 @@ nav > a.g-link {
 h2 {
   /* background-color: tomato; */
   padding: 8px 0;
-  border-bottom: 1px solid #2f395b;
+  border-bottom: 1px solid #2F395B;
   margin-top: 25px;
   margin-bottom: 10px;
   font-size: 1.8em;
@@ -159,11 +159,11 @@ h2 {
 .reto {
   position: relative;
   display: block;
-  background-color: #fff;
+  background-color: white;
   min-width: 250px;
-  min-height: 80px;
+  min-height: 100px;
   margin: 5px;
-  padding: 12px 12px;
+  padding: 15px 18px;
   overflow: hidden;
   box-sizing: border-box;
   border-radius: 3px;
@@ -175,7 +175,7 @@ h2 {
   bottom: 8px; left:  50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  background-color: #3eadfe;
+  background-color: #3EADFE;
   padding: 2px 8px;
   border-radius: 50px
 }
@@ -193,14 +193,16 @@ h2 {
        .reto.redes::before {background: var(--blue)}
 
 .reto > h3, .reto > p {
-  color: #4f4f4f;
+  color: #4F4F4F;
   line-height: 1;
   margin: 0
 }
 
 .reto > h3 {
+  width: 90%;
   margin-bottom: 8px;
-  font-size: 1.1em
+  font-size: 1.1em;
+  line-height: 1.4;
 }
 
 .reto > p {
@@ -221,7 +223,7 @@ h2 {
 }
 
 #clasificacion > .container > div:not(.muroDeLaFama) {
-  border-right: 1px solid #2f395b
+  border-right: 1px solid #2F395B
 }
 
 #clasificacion > .container > .ganadores > .usuarioGanador {
